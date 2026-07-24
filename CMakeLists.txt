@@ -17,14 +17,16 @@ find_package(tutorial_interfaces)
 add_executable(teste_node src/teste_node.cpp)
 add_executable(publicar src/teste_publisher.cpp)
 add_executable(inscrito src/teste_subscriber.cpp)
-add_executable(client src/teste_clientservico.cpp)
+add_executable(cliente src/teste_clientservico.cpp)
 add_executable(server src/teste_serverservico.cpp)
+add_executable(parametro src/teste_parameters.cpp)
 
 ament_target_dependencies(teste_node rclcpp)
 ament_target_dependencies(publicar rclcpp std_msgs)
 ament_target_dependencies(inscrito rclcpp std_msgs)
-ament_target_dependencies(client rclcpp tutorial_interfaces)
+ament_target_dependencies(cliente rclcpp tutorial_interfaces)
 ament_target_dependencies(server rclcpp tutorial_interfaces)
+ament_target_dependencies(parametro rclcpp)
 
 target_include_directories(teste_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -36,7 +38,8 @@ install(TARGETS
 	publicar 
 	inscrito 
   server 
-  client 
+  cliente 
+  parametro
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
