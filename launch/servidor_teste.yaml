@@ -1,0 +1,13 @@
+%YAML 1.2
+---
+
+launch:
+  - node:
+      pkg: "testefull"
+      exec: "publicar"
+      ros_args: "--log-level info"
+      
+  - node:
+      pkg: "testefull"
+      exec: "inscrito"
+      ros_args: "--log-level info"
